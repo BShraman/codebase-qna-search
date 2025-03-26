@@ -1,0 +1,11 @@
+llama-index-core==0.12.24.post1
+llama-index-llms-openai==0.3.25
+llama-index-readers-file==0.4.6 
+llama-index==0.12.24
+llama-index-llms-huggingface-api==0.4.1
+llama_index.embeddings.huggingface_api==0.3.0
+dotenv-python==0.0.1
+langgraph==0.3.20
+chromadb==0.6.3
+llama-index-vector-stores-chroma==0.4.1
+huggingface-hub==0.29.3
