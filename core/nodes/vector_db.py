@@ -39,7 +39,7 @@ class VectorDB:
         index = VectorStoreIndex(
             nodes=nodes,
             storage_context=storage_context,
-            show_progress=True  # Optional: Enable progress bar for large datasets
+            show_progress=True  # progress bar for large datasets
         )
 
         # Persist the index (not strictly necessary for ChromaDB, but useful for LlamaIndex metadata)

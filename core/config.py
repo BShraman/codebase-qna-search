@@ -19,8 +19,8 @@ class Config:
         LLM = HuggingFaceInferenceAPI(model_name="Qwen/Qwen2.5-Coder-32B-Instruct")
         #LLM = OpenAI()
     else:    
-        EMBED_MODEL = HuggingFaceInferenceAPIEmbedding(model_name="BAAI/bge-small-en-v1.5")
-        #LLM = os.getenv("HF_MODEL_NAME","Qwen/Qwen2.5-Coder-32B-Instruct")
+        #EMBED_MODEL = HuggingFaceInferenceAPIEmbedding(model_name="BAAI/bge-small-en-v1.5")
+        EMBED_MODEL = OpenAIEmbedding()
         LLM = HuggingFaceInferenceAPI(model_name="Qwen/Qwen2.5-Coder-32B-Instruct")
 
 config = Config()

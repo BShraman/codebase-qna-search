@@ -16,6 +16,7 @@ class StateGraph():
         # Create the graph
         from core.state import CodebaseState
         from langgraph.graph import StateGraph, END, START
+
         code_base = StateGraph(CodebaseState)
 
         # Add nodes
@@ -27,16 +28,16 @@ class StateGraph():
         code_base.add_node("get_response", self.query.get_response)
 
         # Start the edges
-        #code_base.add_edge(START, "get_collection")
-        code_base.add_edge(START, "document_loader")
-        # # Add conditional branching from 
-        # code_base.add_conditional_edges(
-        #     "get_collection",
-        #     self.route.route_invoke,
-        #     {
-        #         "exists": "query_vector_db",
-        #         "does_not_exist": "document_loader"
-        #     })
+        code_base.add_edge(START, "get_collection")
+        #code_base.add_edge(START, "document_loader")
+        # Add conditional branching from 
+        code_base.add_conditional_edges(
+            "get_collection",
+            self.route.route_invoke,
+            {
+                "exists": "query_vector_db",
+                "does_not_exist": "document_loader"
+            })
 
         # # Add edges - defining the flow
         code_base.add_edge("document_loader", "document_embedding")

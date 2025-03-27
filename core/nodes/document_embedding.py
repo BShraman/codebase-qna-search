@@ -45,16 +45,15 @@ class DocumentEmbedding:
         # Retrieve documents from state
         documents = state.get("documents")
 
-        # Convert documents into nodes
-        # splitter = SentenceSplitter(chunk_size=1024)
+
         pipeline = IngestionPipeline(
             transformations=[
-                SentenceSplitter(chunk_size=25, chunk_overlap=0),
+                SentenceSplitter(chunk_size=512, chunk_overlap=50), # Allows more complete context
                 TitleExtractor(),
                 self.embedding_model,
             ]
         )
-        #nodes = splitter.get_nodes_from_documents(documents)
+        
         nodes = asyncio.run(pipeline.arun(documents=documents))
 
         if not nodes:
