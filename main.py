@@ -20,5 +20,5 @@ def main(query: str = None):
     return result
 
 if __name__ == "__main__":
-    query = "How many method are there in CodeReviewAgent class ?"
+    query = "Where is static_analysis_agent method and explain its scope ?"
     main(query)

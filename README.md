@@ -1,5 +1,8 @@
 ## Overview
-Codebase QnA Search is a developer tool designed to simplify searching and retrieving answers from codebases. It leverages advanced technologies such as the LlamaIndex for efficient indexing, a Llama Graph for structured data representation, and a robust ingestion pipeline to process and embed code repositories. The application integrates a powerful query engine to enable precise and context-aware searches. Additionally, the Llama workflow orchestrates the interaction between these components, ensuring seamless functionality. By utilizing OpenAI and Hugging Face APIs, the tool provides embedding, inference, and chat capabilities, making it an indispensable resource for navigating and understanding large codebases.
+Codebase QnA Search is a tool for developers to easily search and find answers in codebases. It uses advanced technologies like the LlamaIndex Framework for indexing, the LangGraph Framework for organizing data, and a pipeline to process and embed code repositories. The tool includes a smart query engine for accurate and context-aware searches. By integrating OpenAI and Hugging Face APIs, it offers features like embeddings, inference, and chat, making it a valuable resource for understanding large codebases.
+
+## Scope
+The scope of Codebase QnA Search is to empower developers with an efficient tool for navigating and understanding large codebases. By leveraging advanced indexing and data organization frameworks, the tool simplifies the process of searching for specific code elements or gaining insights into the structure and functionality of a repository. It integrates state-of-the-art APIs for embeddings, inference, and conversational interactions, ensuring accurate and context-aware results. The tool is designed to enhance productivity, streamline codebase exploration, and support developers in maintaining and improving complex software systems.
 
 ## Setup Steps
 1. Clone the repository:
@@ -8,46 +11,35 @@ Codebase QnA Search is a developer tool designed to simplify searching and retri
     cd codebase-qna-search
     ```
 
-2. Create a Python virtual environment and activate it:
+2. Set up a Python virtual environment:
     ```bash
     python3 -m venv venv
     source venv/bin/activate
     pip3 install -r requirements.txt 
     ```
 
-3. Set up environment variables:
+3. Configure environment variables:
     - Create a `.env` file in the root directory.
-    - Add the following variables:
+    - Add these variables:
       ```
-      SERVICE= # "openai" or "huggingface" chose 1 and setup rest
-      HUGGING_FACE_HUB_TOKEN=<your-df_token>
-      OPENAI_API_KEY=<your-openapi-key>
-      HF_MODEL_NAME=<df-model-name>
+      SERVICE= # Choose "openai" or "huggingface"
+      HUGGING_FACE_HUB_TOKEN=<your-token>
+      OPENAI_API_KEY=<your-api-key>
+      HF_MODEL_NAME=<model-name>
       ```
 
-4. Start the application:
-    ```
+4. Run the application:
+    ```bash
     python3 main.py
     ```
 
-## Overall Process
-**1. Define State**  
-    The state represents the current configuration and attributes of the codebase, focusing on document processing, query handling, and storage settings.
-
-**2. Define Nodes**  
-    Nodes in the LlamaGraph represent distinct components or entities within the codebase. Each node is responsible for a specific functionality or data, such as representing files, functions, or classes. These nodes are designed to interact with one another through well-defined edges, forming a structured graph. Key nodes include document embedding, vector database operations, and query handling to retrieve responses.
-
-**3. Define Routes**  
-    Routes in the LlamaGraph are responsible for determining the flow of processes based on the state .These routes check the existence and validity of collections within the chromadb and dynamically direct the workflow accordingly.
-
-**4. Create State Graph**  
-    The state graph is constructed by setting up the initial state, adding nodes, and defining edges to establish the flow of processes. This graph acts as the backbone of the application, connecting various components and ensuring smooth interaction between them. Nodes represent functionalities, while edges define the relationships and transitions, enabling efficient execution of workflows.
-
-**5. Define Edges**  
-    Edges in the state graph represent the connections and dependencies between nodes. They define how data flows and processes transition from one node to another.
-
-**6. Run Application**  
-    Once the state graph is fully defined, the application can be executed. Running the application initializes the state, processes the codebase, and enables query handling. This step brings together all components, allowing users to interact with the tool and retrieve insights from the codebase seamlessly.
+## How It Works
+1. **Define State**: Set up the configuration for processing documents, handling queries, and storing data.
+2. **Define Nodes**: Nodes represent parts of the codebase like files, functions, or classes. They work together in a structured graph.
+3. **Define Routes**: Routes guide the workflow by checking collections in the database and directing processes.
+4. **Create State Graph**: Build a graph connecting nodes and edges to define workflows and interactions.
+5. **Define Edges**: Edges show how nodes are connected and how data flows between them.
+6. **Run Application**: Start the tool to process the codebase and handle queries.
 
 ## Compiled Graph
 ![Compiled Graph](docs/compiled_graph.png)
