@@ -32,9 +32,6 @@ class CodebaseState(TypedDict):
     index: Optional[str]
     source_nodes: Optional[str]
 
-    # Document parsing state
-    is_document_parsing: Optional[bool]
-
     # User query and response
     query: Optional[str]
     response: Optional[str]
