@@ -34,7 +34,7 @@ Codebase QnA Search is a developer tool designed to simplify searching and retri
 
 ## Overall Process
 **1. Define State**  
-    The state represents the current configuration and attributes of the codebase, focusing on document processing, query handling, and storage settings. Below are the key attributes:  
+    The state represents the current configuration and attributes of the codebase, focusing on document processing, query handling, and storage settings.
 
 **2. Define Nodes**  
     Nodes in the LlamaGraph represent distinct components or entities within the codebase. Each node is responsible for a specific functionality or data, such as representing files, functions, or classes. These nodes are designed to interact with one another through well-defined edges, forming a structured graph. Key nodes include document embedding, vector database operations, and query handling to retrieve responses.
