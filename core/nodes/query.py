@@ -13,11 +13,9 @@ class Query:
 
     def query_vector_db(self, state: CodebaseState):
         """Document Querying"""
-        from llama_index.core import load_index_from_storage
         from llama_index.core import VectorStoreIndex
         from llama_index.vector_stores.chroma import ChromaVectorStore
         import chromadb
-        from llama_index.llms.openai import OpenAI
 
         collection_name = state.get("collection_name")
         persist_dir = state.get("persist_dir")

@@ -1,8 +1,5 @@
 ## Overview
-Codebase QnA Search is a tool for developers to easily search and find answers in codebases. It uses advanced technologies like the LlamaIndex Framework for indexing, the LangGraph Framework for organizing data, and a pipeline to process and embed code repositories. The tool includes a smart query engine for accurate and context-aware searches. By integrating OpenAI and Hugging Face APIs, it offers features like embeddings, inference, and chat, making it a valuable resource for understanding large codebases.
-
-## Scope
-The scope of Codebase QnA Search is to empower developers with an efficient tool for navigating and understanding large codebases. By leveraging advanced indexing and data organization frameworks, the tool simplifies the process of searching for specific code elements or gaining insights into the structure and functionality of a repository. It integrates state-of-the-art APIs for embeddings, inference, and conversational interactions, ensuring accurate and context-aware results. The tool is designed to enhance productivity, streamline codebase exploration, and support developers in maintaining and improving complex software systems.
+Codebase QnA Search is a powerful tool designed to help developers efficiently navigate and understand large codebases. It leverages the **LlamaIndex Framework** for advanced indexing and embedding, enabling the creation of a vector database that supports fast and accurate searches. Additionally, the **LangGraph Framework** is utilized to organize data into a structured state graph, defining workflows and interactions between various components of the codebase.
 
 ## Setup Steps
 1. Clone the repository:
@@ -32,6 +29,7 @@ The scope of Codebase QnA Search is to empower developers with an efficient tool
     ```bash
     python3 main.py
     ```
+    *Update query inside the application before running*
 
 ## How It Works
 1. **Define State**: Set up the configuration for processing documents, handling queries, and storing data.

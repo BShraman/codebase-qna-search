@@ -10,7 +10,6 @@ class CodebaseState(TypedDict):
         documents (Optional[str]): Path or reference to the documents being processed.
         nodes (Optional[str]): Serialized or structured representation of nodes.
         index (Optional[str]): Index data for document retrieval.
-        source_nodes (Optional[str]): Source nodes used in processing.
 
         is_document_parsing (Optional[bool]): Indicates if document parsing is in progress.
 
@@ -30,7 +29,6 @@ class CodebaseState(TypedDict):
     documents: Optional[str]
     nodes: Optional[str]
     index: Optional[str]
-    source_nodes: Optional[str]
 
     # User query and response
     query: Optional[str]

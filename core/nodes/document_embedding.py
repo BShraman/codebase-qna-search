@@ -1,6 +1,4 @@
 
-import asyncio
-
 from core.state import CodebaseState
 from core.config import config
 
@@ -37,7 +35,6 @@ class DocumentEmbedding:
     def document_embedding(self, state: CodebaseState):
         """Document Embedding"""
         from llama_index.core.node_parser import SentenceSplitter
-        from llama_index.embeddings.openai import OpenAIEmbedding
         from llama_index.core.extractors import TitleExtractor
         from llama_index.core.ingestion import IngestionPipeline
         import asyncio
