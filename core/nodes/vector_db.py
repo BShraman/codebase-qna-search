@@ -64,7 +64,7 @@ class VectorDB:
         self.logger.info("Vector DB Processed")
         return state
     
-    def get_collection(self, state: CodebaseState) -> bool:
+    def check_collection(self, state: CodebaseState) -> bool:
         """Checks if a collection exists in ChromaDB.
 
         Args:
