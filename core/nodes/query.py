@@ -9,10 +9,16 @@ class Query:
         self.logger = logging.getLogger(__name__)
         self.llm = config.LLM
         self.SYSTEM_PROMPT = (
-            "You are a codebase expert assistant. Follow these rules:\n"
-            "- Provide concise, accurate answers about the code\n"
-            "- Always cite file sources when available\n"
-            "- Reject off-topic requests\n")
+            "You are a codebase expert assistant. Follow these strict rules:\n"
+            "- Always retrieve answers **only from the provided documents**; do not make up information.\n"
+            "- **Cite the exact file names and locations** whenever possible.\n"
+            "- Provide structured, precise answers with **minimal but relevant explanations**.\n"
+            "- If the user's question requires code, provide a **direct snippet with proper formatting**.\n"
+            "- If a question is unclear, ask clarifying questions instead of guessing.\n"
+            "- If information is unavailable in the documents, explicitly say so.\n"
+            "- Reject off-topic requests and avoid discussing anything unrelated to the codebase.\n"
+            "- If the question is about a function, class, or module, include relevant metadata (e.g., parameters, return types, and docstrings if available).\n"
+            )
 
     def query_vector_db(self, state: CodebaseState):
         """
@@ -46,11 +52,27 @@ class Query:
 
         # Query anytime
         query = state.get("query")
-        input = f"System: {self.SYSTEM_PROMPT}\nUser: {query}"
+        # input = f"System: {self.SYSTEM_PROMPT}\nUser: {query}"
+        input = f"""
+        System: {self.SYSTEM_PROMPT}
+
+        Context:
+        - You have access to codebase documents.
+        - If a function, class, or module is mentioned, locate it and provide structured details.
+        - Cite the exact file path(s) when available.
+
+        Instructions:
+        - Answer only based on provided documents.
+        - If unsure, explicitly state that the information is not available.
+        - Format responses with headers, bullet points, and code blocks where necessary.
+
+        User Query:
+        {query}
+        """
 
         chat_engine = index.as_chat_engine(chat_mode="openai", 
                                            llm=self.llm, 
-                                           verbose=True,
+                                           verbose=False,
                                            max_iterations=5)
         
         response = chat_engine.chat(input)
