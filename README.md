@@ -38,10 +38,11 @@ The application leverages the following frameworks to deliver its functionality:
     - Create a `.env` file in the root directory.
     - Add these variables:
       ```
-      SERVICE= # Choose "openai" or "huggingface"
-      HUGGING_FACE_HUB_TOKEN=<your-token>
+      SERVICE="openai"
       OPENAI_API_KEY=<your-api-key>
-      HF_MODEL_NAME=<model-name>
+      DOC_PATH=<<codebase folder>>
+      COLLECTION_NAME="collection name"
+      PERSIST_DIR="vector db dir"
       ```
 
 4. Run the application:
