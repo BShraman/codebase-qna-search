@@ -41,8 +41,8 @@ The application leverages the following frameworks to deliver its functionality:
       SERVICE="openai"
       OPENAI_API_KEY=<your-api-key>
       DOC_PATH=<<codebase folder>>
-      COLLECTION_NAME="collection name"
-      PERSIST_DIR="vector db dir"
+      COLLECTION_NAME=<<<collection name>>>
+      PERSIST_DIR=<<<vector db dir>>>
       ```
 
 4. Run the application:
