@@ -68,7 +68,7 @@ As part of the application run, it will first check the collection name in the v
 ![Collection Exists](docs/exists.png)
 
 **Collection Exists**
-![Collection Exists](docs/doesntExists.png)
+![Collection Exists](docs/doesnotExists.png)
 
 
 
