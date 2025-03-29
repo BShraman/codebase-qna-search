@@ -64,10 +64,10 @@ The application leverages the following frameworks to deliver its functionality:
 ## Application Run and Output
 As part of the application run, it will first check the collection name in the vector database (VectorDB). If the collection does not exist, the application will create it and output the query result. If the collection already exists, it will query the collection and return the result. Below is an example of the application's output:
 
-**Collection Exists**
-![Collection Exists](docs/doesnotExists.png)
-
 **Collection Doesnt Exists**
+![Collection Exists](docs/doesntExists.png)
+
+**Collection Exists**
 ![Collection Exists](docs/exists.png)
 
 
