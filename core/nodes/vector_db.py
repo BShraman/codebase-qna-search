@@ -7,7 +7,20 @@ class VectorDB:
         self.logger = logging.getLogger(__name__)
 
     def vector_db(self, state: CodebaseState):
-        """Storing Data into ChromaDB"""
+        """
+        Stores data into a ChromaDB vector database using LlamaIndex.
+        This method initializes a persistent ChromaDB client, creates or retrieves
+        a collection, and stores nodes into the vector database. It also creates
+        a storage context and index for managing the data.
+        Args:
+            state (CodebaseState): The state object containing the following keys:
+                - "collection_name" (str): The name of the ChromaDB collection.
+                - "persist_dir" (str): The directory path for persisting the database.
+                - "nodes" (list): A list of nodes to be stored in the vector database.
+        Returns:
+            CodebaseState: The updated state object with the "vector_store" key added.
+        """
+
         from llama_index.core import VectorStoreIndex
         from llama_index.vector_stores.chroma import ChromaVectorStore
         from llama_index.core import StorageContext
