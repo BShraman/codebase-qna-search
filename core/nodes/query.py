@@ -72,7 +72,7 @@ class Query:
 
         chat_engine = index.as_chat_engine(chat_mode="openai", 
                                            llm=self.llm, 
-                                           verbose=False,
+                                           verbose=True,
                                            max_iterations=5)
         
         response = chat_engine.chat(input)
