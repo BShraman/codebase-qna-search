@@ -4,6 +4,8 @@ from llama_index.llms.openai import OpenAI
 from llama_index.embeddings.openai import OpenAIEmbedding
 from llama_index.llms.huggingface_api import HuggingFaceInferenceAPI
 from llama_index.embeddings.huggingface_api import HuggingFaceInferenceAPIEmbedding
+import logging
+logger = logging.getLogger(__name__)
 
 # Load environment variables from .env file
 load_dotenv()
@@ -19,11 +21,8 @@ class Config:
     SYSTEM_MESSAGE = "You are a helpful assistant specialized in answering questions and retrieving information about the codebase. Provide accurate and concise responses."
     if SERVICE == "openai":
         EMBED_MODEL = OpenAIEmbedding()
-        LLM = HuggingFaceInferenceAPI(model_name="Qwen/Qwen2.5-Coder-32B-Instruct")
-        #LLM = OpenAI()
-    else:    
-        #EMBED_MODEL = HuggingFaceInferenceAPIEmbedding(model_name="BAAI/bge-small-en-v1.5")
-        EMBED_MODEL = OpenAIEmbedding()
-        LLM = HuggingFaceInferenceAPI(model_name="Qwen/Qwen2.5-Coder-32B-Instruct")
-
+        LLM = OpenAI()
+    else:
+        logger.info("Service is not an OpenAI")
+        
 config = Config()

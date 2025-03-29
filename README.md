@@ -1,6 +1,25 @@
 ## Overview
 Codebase QnA Search is a powerful tool designed to help developers efficiently navigate and understand large codebases. It leverages the **LlamaIndex Framework** for advanced indexing and embedding, enabling the creation of a vector database that supports fast and accurate searches. Additionally, the **LangGraph Framework** is utilized to organize data into a structured state graph, defining workflows and interactions between various components of the codebase.
 
+## Frameworks Used
+The application leverages the following frameworks to deliver its functionality:
+
+1. **LlamaIndex Framework**:
+    - Provides advanced indexing and embedding capabilities.
+    - Enables the creation of a vector database for fast and accurate searches.
+
+2. **LangGraph Framework**:
+    - Organizes data into a structured state graph.
+    - Defines workflows and interactions between various components of the codebase.
+
+3. **ChromaDB**:
+    - Serves as a high-performance vector database.
+    - Stores and retrieves embeddings for efficient query processing.
+
+4. **OpenAI API**:
+    - Powers natural language processing and understanding.
+    - Facilitates query handling and response generation.
+
 ## Setup Steps
 1. Clone the repository:
     ```bash
@@ -41,5 +60,16 @@ Codebase QnA Search is a powerful tool designed to help developers efficiently n
 
 ## Compiled Graph
 ![Compiled Graph](docs/compiled_graph.png)
+
+## Application Run and Output
+As part of the application run, it will first check the collection name in the vector database (VectorDB). If the collection does not exist, the application will create it and output the query result. If the collection already exists, it will query the collection and return the result. Below is an example of the application's output:
+
+**Collection Doesnt Exists**
+![Collection Exists](docs/exists.png)
+
+**Collection Exists**
+![Collection Exists](docs/doesntExists.png)
+
+
 
 

@@ -13,7 +13,17 @@ class StateGraph():
         self.route = RouteState()
 
     def compiled_graph(self):
-        # Create the graph
+        """
+        Generates and compiles a state graph for processing codebase operations.
+
+        The graph defines the flow of operations, including conditional branching
+        and sequential steps, starting from initializing the collection to querying
+        and retrieving responses. It uses nodes and edges to represent the workflow
+        and compiles the graph for execution.
+
+        Returns:
+            compiled_graph: The compiled state graph ready for execution.
+        """
         from core.state import CodebaseState
         from langgraph.graph import StateGraph, END, START
 

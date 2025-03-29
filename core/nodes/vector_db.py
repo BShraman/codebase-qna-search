@@ -2,7 +2,9 @@ from core.state import CodebaseState
 
 class VectorDB:
     def __init__(self):
-        pass
+        import logging
+        logging.basicConfig(level=logging.INFO) 
+        self.logger = logging.getLogger(__name__)
 
     def vector_db(self, state: CodebaseState):
         """Storing Data into ChromaDB"""
@@ -46,7 +48,7 @@ class VectorDB:
         storage_context.persist(persist_dir=persist_dir)
 
         state["vector_store"] = vector_store
-        print("Hello from Vector DB")
+        self.logger.info("Vector DB Processed")
         return state
     
     def get_collection(self, state: CodebaseState) -> bool:
